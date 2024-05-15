@@ -81,7 +81,7 @@ SEXP kx_r_open_connection(SEXP whence) {
                   MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), buf, 256, NULL);
     error(buf);
 #else
-    error(strerror(errno));
+    error("%s", strerror(errno));
 #endif
   }
   return ScalarInteger(connection);
